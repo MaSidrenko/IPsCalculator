@@ -8,10 +8,7 @@ namespace IPsCalculator
 {
 	static class ConvertToBin
 	{
-		//static int dec_num = 0;
 		static int[] bin_num = new int[8];
-		//static List<int> IPs = new List<int>();
-
 		static private int[] DecToBin(int dec_num)
 		{
 			for (int i = 7; i >= 0; i--)
@@ -36,7 +33,7 @@ namespace IPsCalculator
 				{
 					binIP_str += " ";
 				}
-				if(i == 3 )
+				if(i == 3)
 				{
 					binIP_str += ". ";
 				}
@@ -47,4 +44,3 @@ namespace IPsCalculator
 
 	}
 }
-

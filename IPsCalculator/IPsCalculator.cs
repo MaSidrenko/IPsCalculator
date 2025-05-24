@@ -84,11 +84,11 @@ namespace IPsCalculator
 				if (Convert.ToInt32(MaskesBox.Text) >= 256)
 				{
 					MessageBox.Show("Превышино максимальное значение!" +
-								"\nБудет установленно максимальное значение!" +
-								"\nМаксимальное значение равно 255!",
-								"Max Value Error",
-								MessageBoxButtons.OK,
-								MessageBoxIcon.Error);
+									"\nБудет установленно максимальное значение!" +
+									"\nМаксимальное значение равно 255!",
+									"Max Value Error",
+									MessageBoxButtons.OK,
+									MessageBoxIcon.Error);
 					MaskesBox.Text = "255";
 				}
 				if (d_Maskes_Labels.TryGetValue(MaskesBox, out Label label))
@@ -146,10 +146,13 @@ namespace IPsCalculator
 		{
 			string sum_IPs;
 			string sum_Masks;
+
 			uint network_addres;
 			string bin_network;
+
 			string sep_dots_bin_network;
 			string sep_spaces_bin_network;
+
 			double[] result;
 			string output;
 			if (IPBox1.Text != "" && IPBox2.Text != "" && IPBox3.Text != "" && IPBox4.Text != "" && MaskBox1.Text != "" && MaskBox2.Text != "" && MaskBox3.Text != "" && MaskBox4.Text != "")
@@ -203,7 +206,7 @@ namespace IPsCalculator
 			{
 				sum_IPs = ConvertToBin.Clear(lblIPBin1.Text + lblIPBin2.Text + lblIPBin3.Text + lblIPBin4.Text);
 				sum_Masks = ConvertToBin.Clear(lblMaskBin1.Text + lblMaskBin2.Text + lblMaskBin3.Text + lblMaskBin4.Text);
-
+				
 				broadcast_network = Convert.ToUInt32(sum_IPs, 2) | ~Convert.ToUInt32(sum_Masks, 2);
 				bin_broadcast = Convert.ToString(broadcast_network, 2);
 
@@ -242,7 +245,7 @@ namespace IPsCalculator
 				{
 					count = Math.Pow(2, i);
 				}
-				MessageBox.Show("Counts Hosts: " + count);
+				MessageBox.Show("Counts Hosts: " + (count - 2).ToString());
 			}
 			else if (cbPreficsMask.Checked && PrefixMaskBox.Text != "")
 			{
@@ -254,7 +257,7 @@ namespace IPsCalculator
 				{
 					count = Math.Pow(2, i);
 				}
-				MessageBox.Show("Counts Hosts: " + count);
+				MessageBox.Show("Counts Hosts: " + (count - 2).ToString());
 			}
 		}
 

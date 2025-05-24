@@ -9,17 +9,6 @@ namespace IPsCalculator
 	static internal class ConvertToDec
 	{
 		static double dec;
-
-		static private List<string> GetBins(string[] split)
-		{
-			List<string> bins = new List<string>();
-			foreach (string s in split)
-			{
-				bins.AddRange(s.Split(' '));
-			}
-			return bins;
-		}
-
 		public static double[] BinToDec(string bin)
 		{
 			string[] bins = bin.Split(' ');
